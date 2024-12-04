@@ -40,7 +40,7 @@ function App() {
 
     const updateItem = async (id: number) => {
         if (!editItem) return;
-        const response = await fetch(`${backendUrl}/${id}`, {
+        const response = await fetch(`${backendUrl}/items/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -49,6 +49,7 @@ function App() {
         });
         const data = await response.json();
         setItems(items.map(item => (item.id === id ? data : item)));
+        setEditItem(null);
     };
 
     const deleteItem = async (id: number) => {
