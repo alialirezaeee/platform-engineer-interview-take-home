@@ -49,7 +49,6 @@ function App() {
         });
         const data = await response.json();
         setItems(items.map(item => (item.id === id ? data : item)));
-        setEditItem(null);
     };
 
     const deleteItem = async (id: number) => {
