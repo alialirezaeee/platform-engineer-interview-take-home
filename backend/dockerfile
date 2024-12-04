@@ -1,0 +1,15 @@
+FROM node:18 AS builder
+WORKDIR /app
+COPY ./backend /app
+COPY ./backend/.env.backend /app/.env
+ARG BACKEND_PORT
+ARG CORS_ORIGIN
+RUN npm install
+FROM node:18-slim
+WORKDIR /app
+COPY --from=builder /app/package*.json ./
+COPY --from=builder /app/src ./src
+RUN npm install --production
+EXPOSE 3000
+CMD ["node", "src/index.js"]
+
