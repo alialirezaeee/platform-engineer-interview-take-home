@@ -53,7 +53,7 @@ function App() {
     };
 
     const deleteItem = async (id: number) => {
-        await fetch(`${backendUrl}/${id}`, {
+        await fetch(`${backendUrl}/items/${id}`, {
             method: 'DELETE',
         });
         setItems(items.filter(item => item.id !== id));

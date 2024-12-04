@@ -8,7 +8,7 @@ I fixed the issue with connecting the fronend to the backend  API by updating th
 const response = await fetch(`${backendUrl}/items`);
 ```
 
-I ensure that endpoints for operations like `fetchItems` and `createItems` and `updateItem` are properly aligned with backend implementation.
+I ensure that endpoints for operations like `fetchItems` , `createItems` , `updateItem` and `deleteItem` are properly aligned with backend implementation.
 
 ## Setting Up CORS in the Backend
 
